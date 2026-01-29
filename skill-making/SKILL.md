@@ -1,24 +1,26 @@
 ---
 name: skill-making
-description: Create compliant OpenCode or Claude skills with correct paths and frontmatter.
+description: Create compliant skills with correct paths, defaults, and frontmatter.
 ---
 
 ## Purpose
-Help create new skills that follow OpenCode and Claude-compatible rules.
+Help create new skills that follow path, discovery, and frontmatter rules.
 
 ## Required First Question
-Ask: Is this skill for Claude (`.claude/skills/...`) or OpenCode (`.opencode/skills/...`)?
-Recommended default: Claude unless the user specifies otherwise.
+Ask: Where should this skill live (current directory, Claude, or OpenCode)?
+Recommended default: current directory path `<name>/SKILL.md` unless the user asks for discoverable locations.
 
 ## When to Use
 Use when the user wants to create or update skills and needs correct structure.
 
 ## Workflow
-- Confirm target (Claude or OpenCode) before giving path guidance.
+- Confirm target path (current directory or discoverable Claude/OpenCode paths).
 - Validate `name` and `description` requirements.
-- Direct the user to the correct reference doc for the chosen target.
+- If discoverable, direct the user to the correct reference doc for the chosen target.
+- If current directory, follow the current-directory default reference.
 
 ## References
+- `references/current-directory-default.md`
 - `references/claude-paths.md`
 - `references/opencode-paths.md`
 - `references/frontmatter-and-naming.md`
